@@ -8,7 +8,7 @@ interface PropTypes {
 }
 
 const SectionLayout = (props: PropTypes) => {
-    const {children, description, title} = props;
+    const {children} = props;
 
   return (
     <div className='w-full px-20 py-20 flex flex-col bg-accent gap-30'>
