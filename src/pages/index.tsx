@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 import SectionLayout from "@/Layout/Section";
 import ExperienceAndAwards from "@/views/Experience";
 import Main from "@/views/Main";
@@ -16,14 +17,22 @@ const poppins = Poppins({
 
 export default function Home() {
   return (
-    <main className={`${poppins.variable} ${poppins.className}`}>
-      <Navbar/>
-      <Main/>
-      <SectionLayout>
-        <ExperienceAndAwards/>
-        <Services/>
-      </SectionLayout>
-      <Footer/>
-    </main>
+    <ThemeProvider
+    attribute="class"
+    defaultTheme="system"
+    enableSystem
+    disableTransitionOnChange
+    >
+      <main className={`${poppins.variable} ${poppins.className}`}>
+        <Navbar/>
+        <Main/>
+        <SectionLayout>
+          <ExperienceAndAwards/>
+          <Services/>
+        </SectionLayout>
+        <Footer/>
+      </main>
+
+    </ThemeProvider>
   );
 }
